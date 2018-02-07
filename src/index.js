@@ -16,11 +16,14 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+let element = component(); //storing element to rerender when print.js changes
+document.body.appendChild(element);
 
 if(module.hot) {
   module.hot.accept("./print.js", function() {
     console.log("Accepting the updated printMe module!");
-    printMe();
+    document.body.removeChild(element);
+    element = component(); //re-render component to update click handler
+    document.body.appendChild(element);
   })
 }
