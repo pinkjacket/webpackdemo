@@ -1,3 +1,11 @@
+@@font-face {
+  font-family: "AftaSans";
+  src: url("./AftaSansThin-Italic.otf") format("otf"),
+       url("./AftaSansThin-Regular.otf") format("otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
 .hello {
   color: red;
   background: url("./icon.png");
